@@ -13,7 +13,7 @@ loginRouter.post('/', (request, response) => {
       type: user.type
     }
     const token = jwt.sign(userForToken, process.env.SECRET)
-    return response.status(200).json({ token })
+    return response.status(200).json({ token, ...userForToken })
   } else {
     return response.status(401).json({ error: 'invalid email or password' })
   }
