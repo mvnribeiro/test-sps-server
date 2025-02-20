@@ -18,11 +18,15 @@ const updateUser = (id, updatedUser) => {
 }
 
 const findUserByEmail = (email) => {
-  return Boolean(users.find(user => user.email === email))
+  return users.find(user => user.email === email)
 }
 
 const findUserByName = (name) => {
-  return Boolean(users.find(user => user.name === name))
+  return users.find(user => user.name === name)
+}
+
+const findUserById = (id) => {
+  return users.find(user => user.id === id)
 }
 
 module.exports = {
@@ -32,5 +36,6 @@ module.exports = {
   removeUser,
   updateUser,
   findUserByEmail,
-  findUserByName
+  findUserByName,
+  findUserById
 }
